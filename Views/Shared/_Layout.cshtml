@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - URYVAP</title>
+    <link href="~/images/Home.jpg" rel="shortcut icon" type="image/svg" />
+    <link href="~/lib/bootstrap-v4-rtl/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site1.css" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/popper.js/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap-v4-rtl/js/bootstrap.min.js"></script>
+    <script src="~/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/Home.jpg" class="img-fluid" alt="Home Page" />
+                </a>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" style="white-space:normal" data-toggle="dropdown" href="#">
+                        New Form
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" id="newFormMenu">
+                        <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Registration Form</a></li>
+                        <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Access Form</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Current Metrics</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+            @RenderBody()
+
+        </div>
+
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - URYVAP - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </div>
+    </footer>
+    <script src="~/js/site1.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
